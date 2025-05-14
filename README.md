@@ -52,12 +52,12 @@ Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descr
 
 - **Obtener servicios**  
   ```bash
-  curl -X GET "/services"        -H "api-key: TU_API_KEY"
+  curl -X GET "/services"        
   ```
 
 - **Procesar solicitudes**  
   ```bash
-  curl -X POST "/services-data/requests"        -H "api-key: TU_API_KEY"        -H "Content-Type: application/json"        -d '{
+  curl -X POST "/services-data/requests"                -H "Content-Type: application/json"        -d '{
          "requests": [
            {
              "service_id": "svc-123",
