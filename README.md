@@ -4,78 +4,30 @@ API para el monitoreo de solicitudes de parte de las instituciones.
 
 ---
 
-## 📖 Especificación OpenAPI
+## 🛠️ Requisitos y acceso
 
-Todos los endpoints y esquemas están definidos en el archivo `swagger.json` (OpenAPI 3.0). Puedes visualizar la documentación en dos formas:
+Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descritos a continuación:
 
-- **Con Redoc**  
-  1. Instala Redoc CLI si aún no lo tienes:  
-     ```bash
-     npm install -g redoc-cli
-     ```  
-  2. Sirve la spec y ábrela en tu navegador:  
-     ```bash
-     redoc-cli serve swagger.json
-     ```  
-  3. Visita en tu navegador:  
-     ```
-     http://localhost:8080
-     ```
+1. **Instalación y configuración de X-Road**  
+   Asegúrese de contar con X-Road debidamente instalado y configurado según las directrices oficiales. Para más detalles, consulte la [guía de instalación de X-Road](https://github.com/ogticrd/xroad-members/blob/master/README.md).
 
-- **Con Swagger UI**  
-  1. Instala un servidor estático (por ejemplo `http-server`):  
-     ```bash
-     npm install -g http-server
-     ```  
-  2. Inicia el servidor en la raíz del proyecto:  
-     ```bash
-     http-server . -c-1
-     ```  
-  3. Accede a `http://localhost:8080/swagger.json` dentro de [https://petstore.swagger.io/](https://petstore.swagger.io/) (clic en “Explore” y pega la URL).
+2. **Solicitud de acceso al dashboard**  
+   Remita una petición formal al administrador de la institución, indicando el alcance de su uso y los datos a monitorear. Una vez aprobado, recibirá las credenciales necesarias.
 
----
-
-## 🚀 Cómo ejecutar el servidor
-
-> Asegúrate de tener Node.js (>=16) y npm o yarn instalados.
-
-1. **Clona este repositorio**  
-   ```bash
-   git clone https://github.com/tu-usuario/api-documentation.git
-   cd api-documentation
-   ```
-
-2. **Instala dependencias**  
-   ```bash
-   npm install
-   # o
-   yarn install
-   ```
-
-3. **Arranca el modo desarrollo**  
-   ```bash
-   npm run start:dev
-   # o
-   yarn start:dev
-   ```
-
-4. **Producción**  
-   ```bash
-   npm run build
-   npm run start:prod
-   ```
+3. **Visualización de la documentación Swagger**  
+   Ingrese a la URL `/swagger-doc` en su entorno habilitado. Allí encontrará la interfaz de Swagger UI para explorar los endpoints, revisar esquemas y generar sus propios scripts de conexión.  
 
 ---
 
 ## 📌 Endpoints
 
-| Método | Ruta                                                      | Descripción                                                           | Autenticación         |
-| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- | --------------------- |
-| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    | —                     |
-| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        | Header `api-key`      |
-| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       | Bearer JWT (`access-token`) |
-| `PATCH`| `/institution-access/{institution_id}`                    | Crear o regenerar el token de una institución                         | Bearer JWT (`access-token`) |
-| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              | Header `api-key`      |
+| Método | Ruta                                                      | Descripción                                                           | Autenticación              |
+| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------- |
+| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    | —                          |
+| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        | Header `api-key`           |
+| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       | Bearer JWT (`access-token` ) |
+| `PATCH`| `/institution-access/{institution_id}`                    | Crear o regenerar el token de una institución                         | Bearer JWT (`access-token` ) |
+| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              | Header `api-key`           |
 
 ---
 
@@ -104,12 +56,12 @@ Todos los endpoints y esquemas están definidos en el archivo `swagger.json` (Op
 
 - **Obtener servicios**  
   ```bash
-  curl -X GET "http://localhost:3000/services"        -H "api-key: TU_API_KEY"
+  curl -X GET "/services"        -H "api-key: TU_API_KEY"
   ```
 
 - **Procesar solicitudes**  
   ```bash
-  curl -X POST "http://localhost:3000/services-data/requests"        -H "api-key: TU_API_KEY"        -H "Content-Type: application/json"        -d '{
+  curl -X POST "/services-data/requests"        -H "api-key: TU_API_KEY"        -H "Content-Type: application/json"        -d '{
          "requests": [
            {
              "service_id": "svc-123",
