@@ -20,9 +20,8 @@ Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descr
 
 | Método | Ruta                                                      | Descripción                                                           |
 | ------ | --------------------------------------------------------- | --------------------------------------------------------------------- |
-| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    |
+| `GET`  | `/`                                                       | Endpoint para comprobar actividad en el servidor (“Hello world”)      |
 | `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        |
-| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       |
 | `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              |
 
 ---
@@ -57,7 +56,9 @@ Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descr
 
 - **Procesar solicitudes**  
   ```bash
-  curl -X POST "/services-data/requests"                -H "Content-Type: application/json"        -d '{
+  curl -X POST "/services-data/requests"                
+  -H "Content-Type: application/json"        
+  -d '{
          "requests": [
            {
              "service_id": "svc-123",
