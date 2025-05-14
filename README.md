@@ -18,13 +18,12 @@ Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descr
 
 ## 📌 Endpoints
 
-| Método | Ruta                                                      | Descripción                                                           | <!--Autenticación              |-->
-| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- | <!-- -------------------------- |-->
-| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    | <!-- —                          |-->
-| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        | <!-- Header `api-key`           |-->
-| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       | <!-- Bearer JWT (`access-token` ) |-->
-<!-- | `PATCH`| `/institution-access/{institution_id}`                    | Crear o regenerar el token de una institución                       | Bearer JWT (`access-token` ) | -->
-| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              | <!-- Header `api-key`           |-->
+| Método | Ruta                                                      | Descripción                                                           |
+| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- |
+| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    |
+| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        |
+| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       |
+| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              |
 
 ---
 
