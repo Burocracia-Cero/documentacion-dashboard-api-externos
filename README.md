@@ -11,23 +11,20 @@ Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descr
 1. **Instalación y configuración de X-Road**  
    Asegúrese de contar con X-Road debidamente instalado y configurado según las directrices oficiales. Para más detalles, consulte la [guía de instalación de X-Road](https://github.com/ogticrd/xroad-members/blob/master/README.md).
 
-2. **Solicitud de acceso al dashboard**  
-   Remita una petición formal al administrador de la institución, indicando el alcance de su uso y los datos a monitorear. Una vez aprobado, recibirá las credenciales necesarias.
-
-3. **Visualización de la documentación Swagger**  
+2. **Visualización de la documentación Swagger**  
    Ingrese a la URL `/swagger-doc` en su entorno habilitado. Allí encontrará la interfaz de Swagger UI para explorar los endpoints, revisar esquemas y generar sus propios scripts de conexión.  
 
 ---
 
 ## 📌 Endpoints
 
-| Método | Ruta                                                      | Descripción                                                           | Autenticación              |
-| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- | -------------------------- |
-| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    | —                          |
-| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        | Header `api-key`           |
-| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       | Bearer JWT (`access-token` ) |
-| `PATCH`| `/institution-access/{institution_id}`                    | Crear o regenerar el token de una institución                         | Bearer JWT (`access-token` ) |
-| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              | Header `api-key`           |
+| Método | Ruta                                                      | Descripción                                                           | <!--Autenticación              |-->
+| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- | <!-- -------------------------- |-->
+| `GET`  | `/`                                                       | Endpoint de prueba (“Hello world”)                                    | <!-- —                          |-->
+| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        | <!-- Header `api-key`           |-->
+| `GET`  | `/institution-access/getInstitutionKey/{id}`              | Obtener el access-key asignado a la institución                       | <!-- Bearer JWT (`access-token` ) |-->
+<!-- | `PATCH`| `/institution-access/{institution_id}`                    | Crear o regenerar el token de una institución                       | Bearer JWT (`access-token` ) | -->
+| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              | <!-- Header `api-key`           |-->
 
 ---
 
