@@ -1,7 +1,6 @@
-# Monitoreo API
+# Documentación API Monitoreo
 
-API para el monitoreo de solicitudes de parte de las instituciones.
-
+Documentación oficial de la API de integración con los servicios de las instituciones garantizando trazabilidad completa y seguridad de extremo a extremo.
 ---
 
 ## 🛠️ Requisitos y acceso
@@ -12,8 +11,8 @@ Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descr
    Asegúrese de contar con X-Road debidamente instalado y configurado según las directrices oficiales. Para más detalles, consulte la [guía de instalación de X-Road](https://github.com/ogticrd/xroad-members/blob/master/README.md).
 
 2. **Visualización de la documentación Swagger**  
-   Ingrese a la URL `/swagger-doc` en su entorno habilitado. Allí encontrará la interfaz de Swagger UI para explorar los endpoints, revisar esquemas y generar sus propios scripts de conexión.  
 
+   Ingrese a la URL `/swagger-doc` en su entorno habilitado. Allí encontrará la interfaz de Swagger UI para explorar los endpoints, revisar esquemas y proceder a la integración.  
 ---
 
 ## 📌 Endpoints
