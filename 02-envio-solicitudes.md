@@ -137,18 +137,6 @@ def get_requests_changed_today(date_str):
     Returns:
         list: Lista de solicitudes que cambiaron en la fecha indicada
     """
-    # Implementación de ejemplo - reemplazar con tu lógica de acceso a datos
-    # Por ejemplo, consulta a base de datos para obtener solicitudes con cambios
-    # return [
-    #     {
-    #         "serviceId": "svc-123",
-    #         "requestId": "req-456",
-    #         "openingDate": "2025-05-14T08:00:00Z",
-    #         "statusId": 2,
-    #         "lastModifiedDate": "2025-05-14T08:15:00Z"
-    #     }
-    # ]
-
 def send_daily_status_changes():
     """
     Envía al Dashboard Monitor todas las solicitudes que han cambiado de estado hoy
