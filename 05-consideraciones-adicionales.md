@@ -15,22 +15,21 @@
   - Configurar notificaciones por email, SMS o webhooks
   - Establecer umbrales para las alertas (3 fallos consecutivos, etc.)
 
-## 5.2 Seguridad
+## 5.2 Consideraciones sobre X-ROAD
 
-- **Autenticación**
-  - API keys
-  - JWT tokens con rotación periódica
-  - OAuth 2.0 para integración con sistemas de identidad empresariales
+> **Nota importante:** La seguridad de las comunicaciones está gestionada por X-ROAD, que proporciona autenticación, cifrado y garantía de integridad para todas las peticiones. No es necesario implementar mecanismos adicionales de seguridad como JWT, OAuth o API keys.
 
-- **Encriptación**
-  - Utilizar HTTPS/TLS en todas las comunicaciones
-  - Encriptar datos sensibles (e.g. credenciales)
-  - Seguir estándares de seguridad actualizados (TLS 1.2+)
+- **Ventajas de la seguridad X-ROAD**
+  - Autenticación mutua de los sistemas participantes
+  - Cifrado de extremo a extremo de los mensajes
+  - Firmas digitales para garantizar integridad y no repudio
+  - Registro de auditoría centralizado
 
 - **Validación de datos**
-  - Sanitizar todos los inputs antes de procesarlos
-  - Implementar listas blancas para campos críticos
-  - Validar tamaños máximos, formatos y valores permitidos
+  - A pesar de la seguridad de X-ROAD, es recomendable:
+  - Validar la estructura y contenido de los datos recibidos
+  - Implementar validaciones de formato y rango para los campos
+  - Verificar la consistencia de los datos antes de su procesamiento
 
 ## 5.3 Monitoreo
 
