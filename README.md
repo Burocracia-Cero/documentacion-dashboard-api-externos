@@ -1,71 +1,15 @@
-# Documentación API Monitoreo
+# Documentación Dashboard Monitor - APIs Externos
 
-Documentación oficial de la API de integración con los servicios de las instituciones garantizando trazabilidad completa y seguridad de extremo a extremo.
----
+## Índice de Documentación
 
-## 🛠️ Requisitos y acceso
+Este repositorio contiene la documentación completa para la integración con el Dashboard Monitor a través de APIs externas. La documentación se ha organizado en archivos separados para facilitar la navegación y mantenimiento.
 
-Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descritos a continuación:
+> **Nota:** Cada documento incluye enlaces de navegación al final para moverse entre los diferentes pasos de la documentación.
 
-1. **Instalación y configuración de X-Road**  
-   Asegúrese de contar con X-Road debidamente instalado y configurado según las directrices oficiales. Para más detalles, consulte la [guía de instalación de X-Road](https://github.com/ogticrd/xroad-members/blob/master/README.md).
-
-2. **Visualización de la documentación Swagger**  
-
-   Ingrese a la URL `/swagger-doc` en su entorno habilitado. Allí encontrará la interfaz de Swagger UI para explorar los endpoints, revisar esquemas y proceder a la integración.  
----
-
-## 📌 Endpoints
-
-| Método | Ruta                                                      | Descripción                                                           |
-| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- |
-| `GET`  | `/`                                                       | Endpoint para comprobar actividad en el servidor (“Hello world”)      |
-| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        |
-| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              |
-
----
-
-## 💾 Esquemas principales
-
-- **RequestDTO**  
-  ```json
-  {
-    "service_id": "string",
-    "request_id": "string",
-    "opening_date": "2025-05-14T12:34:56Z",
-    "status_id": 1,
-    "last_modified_date": "2025-05-14T12:34:56Z"
-  }
-  ```
-- **RequestArrayDto**  
-  ```json
-  {
-    "requests": [ /* array de RequestDTO */ ]
-  }
-  ```
-
----
-
-## ⚙️ Ejemplos de uso
-
-- **Obtener servicios**  
-  ```bash
-  curl -X GET "/services"        
-  ```
-
-- **Procesar solicitudes**  
-  ```bash
-  curl -X POST "/services-data/requests"                
-  -H "Content-Type: application/json"        
-  -d '{
-         "requests": [
-           {
-             "service_id": "svc-123",
-             "request_id": "req-456",
-             "opening_date": "2025-05-14T08:00:00Z",
-             "status_id": 2,
-             "last_modified_date": "2025-05-14T08:15:00Z"
-           }
-         ]
-       }'
-  ```
+| Documento | Descripción |
+| --- | --- |
+| [1. Instalación y Configuración de X-ROAD ➡️](01-instalacion-xroad.md) | Guía para instalar y configurar X-ROAD según la documentación oficial de ogticrd/xroad-members |
+| [2. Envío de Solicitudes con Cambios de Estado ➡️](02-envio-solicitudes.md) | Endpoints, esquemas de datos y ejemplos para enviar solicitudes que han cambiado de estado |
+| [3. Envío de Información por Intervalos ➡️](03-envio-informacion-intervalos.md) | Implementación del envío de información cada hora y recomendaciones para este proceso |
+| [4. Implementación CDC por Base de Datos ➡️](04-implementacion-cdc.md) | Detalles de implementación de Change Data Capture en PostgreSQL, MySQL y SQL Server |
+| [5. Consideraciones Adicionales ➡️](05-consideraciones-adicionales.md) | Mejores prácticas para seguridad, manejo de errores, monitoreo y escalabilidad |
