@@ -68,20 +68,28 @@ def send_changes_to_api(changes):
     import requests
     
     try:
+        # Transformar los cambios al formato requerido
+        formatted_requests = []
+        
+        for change in changes:
+            # Adaptar según la estructura de tus datos
+            # Este es un ejemplo - ajusta según tus columnas reales
+            formatted_request = {
+                "service_id": str(change[0]) if len(change) > 0 else "string",
+                "request_id": str(change[1]) if len(change) > 1 else "string",
+                "opening_date": change[2].isoformat() if len(change) > 2 and hasattr(change[2], 'isoformat') else "2025-05-14T12:34:56Z",
+                "status_id": change[3] if len(change) > 3 else 1,
+                "last_modified_date": change[4].isoformat() if len(change) > 4 and hasattr(change[4], 'isoformat') else "2025-05-14T12:34:56Z"
+            }
+            formatted_requests.append(formatted_request)
+        
+        # Crear payload con los datos formateados
+        payload = {"requests": formatted_requests}
+        
         response = requests.post(
             '/services-data/requests',
             headers={'Content-Type': 'application/json'},
-            json={
-                "requests": [
-                    {
-                        "service_id": "string",
-                        "request_id": "string",
-                        "opening_date": "2025-05-14T12:34:56Z",
-                        "status_id": 1,
-                        "last_modified_date": "2025-05-14T12:34:56Z"
-                    }
-                ]
-            }
+            json=payload
         )
         
         if response.ok:
@@ -166,20 +174,27 @@ def send_hourly_changes(changes_buffer):
     import requests
     
     try:
+        # Transformar los cambios al formato requerido por el API
+        formatted_requests = []
+        
+        for change in changes_buffer:
+            # Extraer datos del cambio según la estructura del buffer
+            formatted_request = {
+                "service_id": change.get("data", {}).get("service_id", "string"),
+                "request_id": change.get("data", {}).get("request_id", "string"),
+                "opening_date": change.get("data", {}).get("opening_date", "2025-05-14T12:34:56Z"),
+                "status_id": change.get("data", {}).get("status_id", 1),
+                "last_modified_date": change.get("timestamp", "2025-05-14T12:34:56Z")
+            }
+            formatted_requests.append(formatted_request)
+        
+        # Crear payload con los datos formateados
+        payload = {"requests": formatted_requests}
+        
         response = requests.post(
             '/services-data/requests',
             headers={'Content-Type': 'application/json'},
-            json={
-                "requests": [
-                    {
-                        "service_id": "string",
-                        "request_id": "string",
-                        "opening_date": "2025-05-14T12:34:56Z",
-                        "status_id": 1,
-                        "last_modified_date": "2025-05-14T12:34:56Z"
-                    }
-                ]
-            }
+            json=payload
         )
         
         if response.ok:
@@ -277,20 +292,28 @@ def send_changes_to_dashboard_api(processed_changes):
     import requests
     
     try:
+        # Transformar los cambios al formato requerido por el API
+        formatted_requests = []
+        
+        for change in processed_changes:
+            # Extraer los datos necesarios de cada cambio
+            data = change.get("data", {})
+            formatted_request = {
+                "service_id": str(data.get("request_id", "string")),
+                "request_id": str(data.get("id", "string")),
+                "opening_date": data.get("created_at", "2025-05-14T12:34:56Z"),
+                "status_id": data.get("status_id", 1),
+                "last_modified_date": change.get("timestamp", "2025-05-14T12:34:56Z")
+            }
+            formatted_requests.append(formatted_request)
+        
+        # Crear payload con los datos formateados
+        payload = {"requests": formatted_requests}
+        
         response = requests.post(
             '/services-data/requests',
             headers={'Content-Type': 'application/json'},
-            json={
-                "requests": [
-                    {
-                        "service_id": "string",
-                        "request_id": "string",
-                        "opening_date": "2025-05-14T12:34:56Z",
-                        "status_id": 1,
-                        "last_modified_date": "2025-05-14T12:34:56Z"
-                    }
-                ]
-            }
+            json=payload
         )
         
         if response.ok:

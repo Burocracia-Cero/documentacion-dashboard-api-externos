@@ -178,15 +178,7 @@ def send_daily_status_changes():
         
         # 4. Enviar las solicitudes
         payload = {
-            "requests": [
-                {
-                    "service_id": "string",
-                    "request_id": "string",
-                    "opening_date": "2025-05-14T12:34:56Z",
-                    "status_id": 1,
-                    "last_modified_date": "2025-05-14T12:34:56Z"
-                }
-            ]
+            "requests": formatted_requests
         }
         
         response = requests.post(
@@ -215,5 +207,3 @@ if __name__ == "__main__":
 ---
 
 **[⬅️ Atrás](01-instalacion-xroad.md) | [Siguiente ➡️](03-envio-informacion-intervalos.md)**
-
----
