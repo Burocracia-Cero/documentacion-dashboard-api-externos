@@ -1,71 +1,48 @@
-# Documentación API Monitoreo
+# Documentación Dashboard Monitor - APIs Externos
 
-Documentación oficial de la API de integración con los servicios de las instituciones garantizando trazabilidad completa y seguridad de extremo a extremo.
----
+## ¿Qué es el Dashboard Monitor?
 
-## 🛠️ Requisitos y acceso
+El Dashboard Monitor es una herramienta centralizada de monitoreo que permite a las instituciones públicas reportar y visualizar el estado de los servicios ciudadanos. Esta plataforma facilita la transparencia y seguimiento de las solicitudes de servicios, mejorando la gestión y la experiencia del ciudadano.
 
-Para garantizar un entorno de monitoreo seguro y eficiente, siga los pasos descritos a continuación:
+## Objetivo de esta documentación
 
-1. **Instalación y configuración de X-Road**  
-   Asegúrese de contar con X-Road debidamente instalado y configurado según las directrices oficiales. Para más detalles, consulte la [guía de instalación de X-Road](https://github.com/ogticrd/xroad-members/blob/master/README.md).
+Esta guía está diseñada para desarrolladores e implementadores técnicos que necesitan integrar sus sistemas institucionales con el Dashboard Monitor. A través de nuestras APIs externas, podrá enviar información sobre solicitudes de servicios y sus cambios de estado de manera segura utilizando la plataforma X-ROAD.
 
-2. **Visualización de la documentación Swagger**  
+## Requisitos previos
 
-   Ingrese a la URL `/swagger-doc` en su entorno habilitado. Allí encontrará la interfaz de Swagger UI para explorar los endpoints, revisar esquemas y proceder a la integración.  
----
+- Acceso a la plataforma X-ROAD y credenciales correspondientes
+- Conocimientos básicos de APIs REST y formato JSON
+- Sistema capaz de realizar peticiones HTTP
+- Información de servicios y solicitudes estructurada según los modelos especificados
 
-## 📌 Endpoints
+## Contenido de la documentación
 
-| Método | Ruta                                                      | Descripción                                                           |
-| ------ | --------------------------------------------------------- | --------------------------------------------------------------------- |
-| `GET`  | `/`                                                       | Endpoint para comprobar actividad en el servidor (“Hello world”)      |
-| `GET`  | `/services`                                               | Obtener todos los servicios de una institución                        |
-| `POST` | `/services-data/requests`                                 | Enviar y procesar un lote de solicitudes                              |
+Esta documentación está organizada de forma secuencial, guiándole paso a paso en el proceso de integración:
 
----
+| Documento | Descripción |
+| --- | --- |
+| [1. Instalación y Configuración de X-ROAD ➡️](01-instalacion-xroad.md) | Guía para instalar y configurar X-ROAD como plataforma de intercambio seguro de datos |
+| [2. Envío de Solicitudes con Cambios de Estado ➡️](02-envio-solicitudes.md) | Detalle de endpoints, esquemas de datos y ejemplos prácticos para reportar solicitudes |
+| [3. Envío de Información por Intervalos ➡️](03-envio-informacion-intervalos.md) | Estrategias para implementar envíos periódicos de información cada hora |
+| [4. Consideraciones Adicionales ➡️](04-consideraciones-adicionales.md) | Mejores prácticas para seguridad, manejo de errores, monitoreo y escalabilidad |
 
-## 💾 Esquemas principales
+> **Navegación:** Cada documento incluye enlaces en su parte inferior para facilitar el movimiento entre las diferentes secciones de la documentación.
 
-- **RequestDTO**  
-  ```json
-  {
-    "service_id": "string",
-    "request_id": "string",
-    "opening_date": "2025-05-14T12:34:56Z",
-    "status_id": 1,
-    "last_modified_date": "2025-05-14T12:34:56Z"
-  }
-  ```
-- **RequestArrayDto**  
-  ```json
-  {
-    "requests": [ /* array de RequestDTO */ ]
-  }
-  ```
+## Flujo de integración simplificado
+
+1. **Configurar X-ROAD** - Establecer la conexión segura entre sistemas
+2. **Implementar API de envío** - Desarrollar la lógica para reportar solicitudes
+3. **Configurar envíos periódicos** - Establecer mecanismos para reportes horarios
+4. **Aplicar buenas prácticas** - Optimizar la integración siguiendo recomendaciones
+
+## Soporte y contacto
+
+Si encuentra problemas durante la implementación o tiene preguntas adicionales, contacte al equipo de soporte técnico:
+
+- **Email:** monitoreo@burocraciacero.gob.do
 
 ---
 
-## ⚙️ Ejemplos de uso
+**Autores:** Equipo de Burocracia Cero y OGTIC
 
-- **Obtener servicios**  
-  ```bash
-  curl -X GET "/services"        
-  ```
-
-- **Procesar solicitudes**  
-  ```bash
-  curl -X POST "/services-data/requests"                
-  -H "Content-Type: application/json"        
-  -d '{
-         "requests": [
-           {
-             "service_id": "svc-123",
-             "request_id": "req-456",
-             "opening_date": "2025-05-14T08:00:00Z",
-             "status_id": 2,
-             "last_modified_date": "2025-05-14T08:15:00Z"
-           }
-         ]
-       }'
-  ```
+**Última actualización:** 06/06/2025
