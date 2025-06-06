@@ -43,6 +43,6 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 ---
 
-**Autores:** Equipo de Burocracia Cero y OGTIC
+**Autores:** Equipo de Burocracia Cero
 
 **Última actualización:** 06/06/2025
