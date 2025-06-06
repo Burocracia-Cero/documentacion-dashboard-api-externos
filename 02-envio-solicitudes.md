@@ -14,18 +14,6 @@ POST /services-data/requests
 
 **Esquemas de Datos:**
 
-- **RequestDTO**
-
-```json
-{
-  "service_id": "string",
-  "request_id": "string",
-  "opening_date": "2025-05-14T12:34:56Z",
-  "status_id": 1,
-  "last_modified_date": "2025-05-14T12:34:56Z"
-}
-```
-
 - **RequestArrayDto**
 
 ```json

@@ -37,27 +37,30 @@ if __name__ == "__main__":
 
 ## 3.1 Recomendaciones para Envío de Data
 
-### Opción Más Recomendada: Change Data Capture (CDC)
+### Técnicas Recomendadas para Datos Periódicos
 
-**Change Data Capture (CDC)** es la técnica más recomendada para capturar y enviar cambios de datos en tiempo real o en intervalos específicos. CDC permite identificar, capturar y entregar los cambios realizados en los datos de una base de datos.
+La implementación de un sistema eficiente para el envío periódico de datos requiere considerar varios enfoques:
 
-### Ventajas del CDC
+- **Polling programado**: Consultas periódicas a la base de datos para detectar cambios
+- **Almacenamiento de marcadores temporales**: Guardar la última fecha de sincronización
+- **Procesamiento por lotes**: Agrupar múltiples cambios para optimizar el rendimiento
 
-- ✅ **Eficiencia:** Solo captura los datos que han cambiado
-- ✅ **Tiempo real:** Permite procesamiento casi inmediato
-- ✅ **Escalabilidad:** Maneja grandes volúmenes de datos
-- ✅ **Integridad:** Garantiza que no se pierdan cambios
+### Ventajas del Envío Programado
 
-### Recursos Adicionales sobre CDC
+- ✅ **Predictibilidad**: Intervalos regulares y predecibles
+- ✅ **Control de recursos**: Minimiza picos de uso del sistema
+- ✅ **Simplicidad**: Fácil de implementar y mantener
+- ✅ **Flexibilidad**: Se adapta a diferentes motores de base de datos
 
-Para una comprensión más profunda de CDC y cómo implementarlo efectivamente:
+### Recursos Adicionales
 
-- **[🔗 Más Detalles sobre CDC](04-implementacion-cdc.md)** - Nuestra guía detallada de implementación para PostgreSQL, MySQL y SQL Server
-- **[🔗 Documentación oficial de PostgreSQL sobre Logical Replication](https://www.postgresql.org/docs/current/logical-replication.html)** - Información técnica sobre CDC en PostgreSQL
-- **[🔗 CDC en MySQL](https://dev.mysql.com/doc/refman/8.0/en/binary-log.html)** - Guía para trabajar con Binary Log de MySQL
-- **[🔗 Microsoft SQL Server CDC](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server)** - Explicación detallada de CDC en SQL Server
+Para una comprensión más profunda de las técnicas de sincronización de datos:
 
-> **Nota:** El CDC funciona monitoreando los logs de transacciones de la base de datos para identificar cambios (INSERT, UPDATE, DELETE) y luego aplicando esos cambios a sistemas de destino de forma asíncrona. Cada motor de base de datos implementa CDC de manera diferente, pero el objetivo es el mismo: capturar cambios de manera eficiente sin afectar el rendimiento de la base de datos principal.
+- **[🔗 Sincronización de Datos](https://www.postgresql.org/docs/current/logical-replication.html)** - Información técnica sobre replicación en PostgreSQL
+- **[🔗 Técnicas de Captura en MySQL](https://dev.mysql.com/doc/refman/8.0/en/binary-log.html)** - Guía para trabajar con Binary Log de MySQL
+- **[🔗 Replicación en SQL Server](https://docs.microsoft.com/en-us/sql/relational-databases/track-changes/about-change-data-capture-sql-server)** - Técnicas de replicación en SQL Server
+
+> **Nota:** Las técnicas de captura de cambios varían según el motor de base de datos, pero el objetivo es el mismo: detectar y transmitir cambios de manera eficiente sin afectar el rendimiento de la base de datos principal.
 
 ## 3.2 Consideraciones de Implementación
 
@@ -131,4 +134,4 @@ def send_interval_data(data, max_retries=3):
 
 ---
 
-**[⬅️ Atrás](02-envio-solicitudes.md) | [Siguiente ➡️](04-implementacion-cdc.md)**
+**[⬅️ Atrás](02-envio-solicitudes.md) | [Siguiente ➡️](04-consideraciones-adicionales.md)**

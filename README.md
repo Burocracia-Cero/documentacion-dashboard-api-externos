@@ -1,15 +1,48 @@
 # Documentación Dashboard Monitor - APIs Externos
 
-## Índice de Documentación
+## ¿Qué es el Dashboard Monitor?
 
-Este repositorio contiene la documentación completa para la integración con el Dashboard Monitor a través de APIs externas. La documentación se ha organizado en archivos separados para facilitar la navegación y mantenimiento.
+El Dashboard Monitor es una herramienta centralizada de monitoreo que permite a las instituciones públicas reportar y visualizar el estado de los servicios ciudadanos. Esta plataforma facilita la transparencia y seguimiento de las solicitudes de servicios, mejorando la gestión y la experiencia del ciudadano.
 
-> **Nota:** Cada documento incluye enlaces de navegación al final para moverse entre los diferentes pasos de la documentación.
+## Objetivo de esta documentación
+
+Esta guía está diseñada para desarrolladores e implementadores técnicos que necesitan integrar sus sistemas institucionales con el Dashboard Monitor. A través de nuestras APIs externas, podrá enviar información sobre solicitudes de servicios y sus cambios de estado de manera segura utilizando la plataforma X-ROAD.
+
+## Requisitos previos
+
+- Acceso a la plataforma X-ROAD y credenciales correspondientes
+- Conocimientos básicos de APIs REST y formato JSON
+- Sistema capaz de realizar peticiones HTTP
+- Información de servicios y solicitudes estructurada según los modelos especificados
+
+## Contenido de la documentación
+
+Esta documentación está organizada de forma secuencial, guiándole paso a paso en el proceso de integración:
 
 | Documento | Descripción |
 | --- | --- |
-| [1. Instalación y Configuración de X-ROAD ➡️](01-instalacion-xroad.md) | Guía para instalar y configurar X-ROAD según la documentación oficial de ogticrd/xroad-members |
-| [2. Envío de Solicitudes con Cambios de Estado ➡️](02-envio-solicitudes.md) | Endpoints, esquemas de datos y ejemplos para enviar solicitudes que han cambiado de estado |
-| [3. Envío de Información por Intervalos ➡️](03-envio-informacion-intervalos.md) | Implementación del envío de información cada hora y recomendaciones para este proceso |
-| [4. Implementación CDC por Base de Datos ➡️](04-implementacion-cdc.md) | Detalles de implementación de Change Data Capture en PostgreSQL, MySQL y SQL Server |
-| [5. Consideraciones Adicionales ➡️](05-consideraciones-adicionales.md) | Mejores prácticas para seguridad, manejo de errores, monitoreo y escalabilidad |
+| [1. Instalación y Configuración de X-ROAD ➡️](01-instalacion-xroad.md) | Guía para instalar y configurar X-ROAD como plataforma de intercambio seguro de datos |
+| [2. Envío de Solicitudes con Cambios de Estado ➡️](02-envio-solicitudes.md) | Detalle de endpoints, esquemas de datos y ejemplos prácticos para reportar solicitudes |
+| [3. Envío de Información por Intervalos ➡️](03-envio-informacion-intervalos.md) | Estrategias para implementar envíos periódicos de información cada hora |
+| [4. Consideraciones Adicionales ➡️](04-consideraciones-adicionales.md) | Mejores prácticas para seguridad, manejo de errores, monitoreo y escalabilidad |
+
+> **Navegación:** Cada documento incluye enlaces en su parte inferior para facilitar el movimiento entre las diferentes secciones de la documentación.
+
+## Flujo de integración simplificado
+
+1. **Configurar X-ROAD** - Establecer la conexión segura entre sistemas
+2. **Implementar API de envío** - Desarrollar la lógica para reportar solicitudes
+3. **Configurar envíos periódicos** - Establecer mecanismos para reportes horarios
+4. **Aplicar buenas prácticas** - Optimizar la integración siguiendo recomendaciones
+
+## Soporte y contacto
+
+Si encuentra problemas durante la implementación o tiene preguntas adicionales, contacte al equipo de soporte técnico:
+
+- **Email:** monitoreo@burocraciacero.gob.do
+
+---
+
+**Autores:** Equipo de Burocracia Cero y OGTIC
+
+**Última actualización:** 06/06/2025
