@@ -1,6 +1,6 @@
 # 3. Envío de Información por Intervalos
 
-El sistema debe enviar información cada **1 hora (1hr)** para mantener sincronizados los datos entre sistemas.
+El sistema debe enviar información cada **24 horas** para mantener sincronizados los datos entre sistemas.
 
 ## Configuración de Intervalos
 
@@ -21,8 +21,8 @@ def send_hourly_data():
     # Enviar datos
     send_data_to_endpoint(interval_data)
 
-# Programar la tarea para ejecutar cada hora
-schedule.every(1).hour.do(send_hourly_data)
+# Programar la tarea para ejecutar cada 24 horas
+schedule.every(24).hour.do(send_hourly_data)
 
 # Bucle principal para mantener el programa en ejecución
 def run_scheduler():
