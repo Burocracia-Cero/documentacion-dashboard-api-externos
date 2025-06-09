@@ -68,117 +68,117 @@ A continuación se presenta la lista completa de estados disponibles en el siste
 | 20  | Queja/Reclamación Descartada       |
 | 21  | En proceso                         |
 
+<!-- 
+## ⚙️ Ejemplos de Uso
 
-# ## ⚙️ Ejemplos de Uso
+### Obtener Servicios
 
-# ### Obtener Servicios
+```bash
+curl -X GET "/services"
+```
 
-# ```bash
-# curl -X GET "/services"
-# ```
+**Descripción:** Endpoint para obtener la lista de servicios disponibles en el sistema.
 
-# **Descripción:** Endpoint para obtener la lista de servicios disponibles en el sistema.
+### Procesar Solicitudes
 
-# ### Procesar Solicitudes
+```bash
+curl -X POST "/services-data/requests" \
+     -H "Content-Type: application/json" \
+     -d '{
+  "requests": [
+    {
+      "service_id": "string",
+      "request_id": "string",
+      "opening_date": "2025-05-14T12:34:56Z",
+      "status_id": 1,
+      "last_modified_date": "2025-05-14T12:34:56Z"
+    }
+  ]
+}'
+```
 
-# ```bash
-# curl -X POST "/services-data/requests" \
-#      -H "Content-Type: application/json" \
-#      -d '{
-#   "requests": [
-#     {
-#       "service_id": "string",
-#       "request_id": "string",
-#       "opening_date": "2025-05-14T12:34:56Z",
-#       "status_id": 1,
-#       "last_modified_date": "2025-05-14T12:34:56Z"
-#     }
-#   ]
-# }'
-# ```
+### Implementación Ejemplo
 
-# ### Implementación Ejemplo
+```python
+# Ejemplo de implementación para enviar solicitudes con cambios de estado
+import requests
+import json
+from datetime import datetime
+import logging
 
-# ```python
-# # Ejemplo de implementación para enviar solicitudes con cambios de estado
-# import requests
-# import json
-# from datetime import datetime
-# import logging
+# Configurar logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
+logger = logging.getLogger(__name__)
 
-# # Configurar logging
-# logging.basicConfig(
-#     level=logging.INFO,
-#     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-# )
-# logger = logging.getLogger(__name__)
-
-# def get_requests_changed_today(date_str):
-#     """
-#     Función para obtener las solicitudes que cambiaron en una fecha específica
-#     Esta función debe ser implementada según la estructura de tu base de datos
+def get_requests_changed_today(date_str):
+    """
+    Función para obtener las solicitudes que cambiaron en una fecha específica
+    Esta función debe ser implementada según la estructura de tu base de datos
     
-#     Args:
-#         date_str: Fecha en formato YYYY-MM-DD
+    Args:
+        date_str: Fecha en formato YYYY-MM-DD
         
-#     Returns:
-#         list: Lista de solicitudes que cambiaron en la fecha indicada
-#     """
-# def send_daily_status_changes():
-#     """
-#     Envía al Dashboard Monitor todas las solicitudes que han cambiado de estado hoy
-#     """
-#     try:
-#         # 1. Obtener la fecha actual
-#         today = datetime.now().strftime("%Y-%m-%d")
-#         logger.info(f"Procesando cambios de estado para la fecha: {today}")
+    Returns:
+        list: Lista de solicitudes que cambiaron en la fecha indicada
+    """
+def send_daily_status_changes():
+    """
+    Envía al Dashboard Monitor todas las solicitudes que han cambiado de estado hoy
+    """
+    try:
+        # 1. Obtener la fecha actual
+        today = datetime.now().strftime("%Y-%m-%d")
+        logger.info(f"Procesando cambios de estado para la fecha: {today}")
         
-#         # 2. Obtener solicitudes que cambiaron hoy
-#         changed_requests = get_requests_changed_today(today)
+        # 2. Obtener solicitudes que cambiaron hoy
+        changed_requests = get_requests_changed_today(today)
         
-#         if not changed_requests:
-#             logger.info("No hay cambios de estado para enviar hoy")
-#             return
+        if not changed_requests:
+            logger.info("No hay cambios de estado para enviar hoy")
+            return
             
-#         # 3. Formatear solicitudes según el esquema RequestArrayDto
-#         formatted_requests = []
-#         for request in changed_requests:
-#             formatted_requests.append({
-#                 "service_id": request["serviceId"],
-#                 "request_id": request["requestId"],
-#                 "opening_date": request["openingDate"],
-#                 "status_id": request["statusId"],
-#                 "last_modified_date": request["lastModifiedDate"]
-#             })
+        # 3. Formatear solicitudes según el esquema RequestArrayDto
+        formatted_requests = []
+        for request in changed_requests:
+            formatted_requests.append({
+                "service_id": request["serviceId"],
+                "request_id": request["requestId"],
+                "opening_date": request["openingDate"],
+                "status_id": request["statusId"],
+                "last_modified_date": request["lastModifiedDate"]
+            })
         
-#         # 4. Enviar las solicitudes
-#         payload = {
-#             "requests": formatted_requests
-#         }
+        # 4. Enviar las solicitudes
+        payload = {
+            "requests": formatted_requests
+        }
         
-#         response = requests.post(
-#             '/services-data/requests',
-#             headers={'Content-Type': 'application/json'},
-#             json=payload,
-#             timeout=30  # Timeout de 30 segundos
-#         )
+        response = requests.post(
+            '/services-data/requests',
+            headers={'Content-Type': 'application/json'},
+            json=payload,
+            timeout=30  # Timeout de 30 segundos
+        )
         
-#         if response.ok:
-#             logger.info(f"✅ {len(formatted_requests)} solicitudes enviadas exitosamente")
-#             return True
-#         else:
-#             logger.error(f"❌ Error al enviar solicitudes: {response.status_code} - {response.text}")
-#             return False
+        if response.ok:
+            logger.info(f"✅ {len(formatted_requests)} solicitudes enviadas exitosamente")
+            return True
+        else:
+            logger.error(f"❌ Error al enviar solicitudes: {response.status_code} - {response.text}")
+            return False
             
-#     except Exception as e:
-#         logger.error(f"❌ Error en el proceso de envío: {str(e)}")
-#         return False
+    except Exception as e:
+        logger.error(f"❌ Error en el proceso de envío: {str(e)}")
+        return False
 
-# # Ejecutar si se llama directamente
-# if __name__ == "__main__":
-#     send_daily_status_changes()
-# ```
+# Ejecutar si se llama directamente
+if __name__ == "__main__":
+    send_daily_status_changes()
+```
 
-# ---
+--- -->
 
 **[⬅️ Atrás](01-instalacion-xroad.md) | [Siguiente ➡️](03-envio-informacion-intervalos.md)**
