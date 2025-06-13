@@ -8,6 +8,8 @@ Esto incluye:
 - Todas las solicitudes cuyo estado haya cambiado en el día en curso.
 - El historial completo de cambios de estado (logs) que hayan ocurrido durante el día para esas solicitudes.
 
+---
+
 ## 3.2 Endpoints Necesarios
 ### Enviar Solicitudes
 
@@ -81,6 +83,7 @@ A continuación se presenta la lista completa de estados disponibles en el siste
 | 20  | Queja/Reclamación Descartada       |
 | 21  | En proceso                         |
 
+---
 
 ## 3.3 Opciones de envío:
 1. **Enviar peticiones separadas por servicio o trámite**, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos.
