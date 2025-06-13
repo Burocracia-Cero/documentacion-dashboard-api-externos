@@ -1,6 +1,6 @@
 # 3. Envío de Solicitudes con Cambios de Estado
 
-## 3.1 Endpoints Necesarios
+## 3.1 Requerimientos de envío de datos
 
 El sistema debe enviar la información correspondiente a **todas las solicitudes que hayan cambiado de estado durante el día actual**.  
 Esto incluye:
@@ -17,6 +17,7 @@ Se sugiere realizar peticiones separadas por cada servicio o trámite, donde cad
 La institución puede elegir libremente la opción que mejor se adapte a su arquitectura o flujo de integración.
 
 
+## 3.2 Endpoints Necesarios
 ### Enviar Solicitudes
 
 ```http
