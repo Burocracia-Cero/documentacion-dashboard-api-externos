@@ -9,8 +9,6 @@ Esto incluye:
 - El historial completo de cambios de estado (logs) que hayan ocurrido durante el día para esas solicitudes.
 
 ### Opciones de envío:
-Se sugiere realizar peticiones separadas por cada servicio o trámite, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos. Aunque
-
 1. **Enviar peticiones separadas por servicio o trámite**, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos.
 2. **Enviar toda la información consolidada en una única petición**, agrupando todas las solicitudes y sus respectivos logs del día.
 
