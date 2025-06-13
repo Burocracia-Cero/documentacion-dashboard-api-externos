@@ -8,13 +8,6 @@ Esto incluye:
 - Todas las solicitudes cuyo estado haya cambiado en el día en curso.
 - El historial completo de cambios de estado (logs) que hayan ocurrido durante el día para esas solicitudes.
 
-### Opciones de envío:
-1. **Enviar peticiones separadas por servicio o trámite**, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos.
-2. **Enviar toda la información consolidada en una única petición**, agrupando todas las solicitudes y sus respectivos logs del día.
-
-La institución puede elegir libremente la opción que mejor se adapte a su arquitectura o flujo de integración.
-
-
 ## 3.2 Endpoints Necesarios
 ### Enviar Solicitudes
 
@@ -87,6 +80,84 @@ A continuación se presenta la lista completa de estados disponibles en el siste
 | 19  | Queja/Reclamación Cerrada          |
 | 20  | Queja/Reclamación Descartada       |
 | 21  | En proceso                         |
+
+
+## 3.3 Opciones de envío:
+1. **Enviar peticiones separadas por servicio o trámite**, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos.
+2. **Enviar toda la información consolidada en una única petición**, agrupando todas las solicitudes y sus respectivos logs del día.
+
+La institución puede elegir libremente la opción que mejor se adapte a su arquitectura o flujo de integración.
+
+
+### Ejemplos de envío de información
+
+A continuación se presentan dos ejemplos válidos de cómo estructurar el envío de datos, según las dos opciones permitidas.
+
+---
+
+#### ✅ Opción 1: Peticiones separadas por servicio
+
+Cada petición contiene **solo las solicitudes de un servicio específico** (en este caso `service_id = "123"`):
+
+```json
+{
+  "requests": [
+    {
+      "service_id": "123",
+      "request_id": "REQ-001",
+      "opening_date": "2025-06-13T08:00:00Z",
+      "status_id": 2,
+      "last_modified_date": "2025-06-13T10:15:00Z"
+    },
+    {
+      "service_id": "123",
+      "request_id": "REQ-001",
+      "opening_date": "2025-06-13T08:00:00Z",
+      "status_id": 3,
+      "last_modified_date": "2025-06-13T12:15:00Z"
+    },
+    {
+      "service_id": "123",
+      "request_id": "REQ-002",
+      "opening_date": "2025-06-12T09:30:00Z",
+      "status_id": 3,
+      "last_modified_date": "2025-06-13T11:45:00Z"
+    }
+  ]
+}
+```
+#### ✅ Opción 2: Petición consolidada con múltiples servicios
+
+Una sola petición contiene solicitudes de distintos servicios:
+
+
+```json
+{
+  "requests": [
+    {
+      "service_id": "123",
+      "request_id": "REQ-001",
+      "opening_date": "2025-06-13T08:00:00Z",
+      "status_id": 2,
+      "last_modified_date": "2025-06-13T10:15:00Z"
+    },
+    {
+      "service_id": "456",
+      "request_id": "REQ-003",
+      "opening_date": "2025-06-10T14:20:00Z",
+      "status_id": 4,
+      "last_modified_date": "2025-06-13T12:05:00Z"
+    },
+    {
+      "service_id": "789",
+      "request_id": "REQ-004",
+      "opening_date": "2025-06-11T16:45:00Z",
+      "status_id": 1,
+      "last_modified_date": "2025-06-13T13:30:00Z"
+    }
+  ]
+}
+```
 
 ---
 
