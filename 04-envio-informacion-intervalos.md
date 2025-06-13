@@ -4,7 +4,7 @@
 
 El sistema debe enviar información cada **24 horas** para mantener sincronizados los datos entre sistemas.
 
-## Configuración de Intervalos
+## Ejemplo - Configuración de Intervalos
 
 ```python
 # Configurar envío cada hora usando schedule
@@ -71,7 +71,7 @@ Para una comprensión más profunda de las técnicas de sincronización de datos
 - **Confirmaciones (Acknowledgments):** Utilizar confirmaciones para verificar el envío exitoso de datos
 - **Reintentos automáticos:** Configurar política de reintentos para manejar fallos temporales de red
 
-## 3.3 Implementación Recomendada
+## 3.3 Ejemplo - Implementación Recomendada
 
 ```python
 # Implementación con reintentos y confirmación
