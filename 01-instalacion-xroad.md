@@ -37,4 +37,4 @@ Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro
 
 ---
 
-**[⬅️ Atrás](README.md) | [Siguiente ➡️](02-envio-solicitudes.md)**
+**[⬅️ Atrás](README.md) | [Siguiente ➡️](02-comunicar-burocracia-cero.md)**

@@ -1,6 +1,6 @@
-# 4. Consideraciones Adicionales
+# 5. Consideraciones Adicionales
 
-## 4.1 Manejo de Errores
+## 5.1 Manejo de Errores
 
 - **Reintentos automáticos con backoff exponencial**
   - Aumentar el tiempo de espera entre reintentos progresivamente
@@ -15,7 +15,7 @@
   - Configurar notificaciones por email, SMS o webhooks
   - Establecer umbrales para las alertas (3 fallos consecutivos, etc.)
 
-## 4.2 Consideraciones sobre X-ROAD
+## 5.2 Consideraciones sobre X-ROAD
 
 > **Nota importante:** La seguridad de las comunicaciones está gestionada por X-ROAD, que proporciona autenticación, cifrado y garantía de integridad para todas las peticiones. No es necesario implementar mecanismos adicionales de seguridad como JWT, OAuth o API keys.
 
@@ -31,7 +31,7 @@
   - Implementar validaciones de formato y rango para los campos
   - Verificar la consistencia de los datos antes de su procesamiento
 
-## 4.3 Monitoreo
+## 5.3 Monitoreo
 
 - **Métricas de performance**
   - Tiempo de respuesta
@@ -47,7 +47,7 @@
   - Detectar patrones anómalos antes de que causen problemas
   - Notificar cuando métricas cruciales se desvíen de rangos normales
 
-## 4.4 Escalabilidad
+## 5.4 Escalabilidad
 
 - **Sharding de bases de datos**
   - Particionar datos para distribuir la carga
@@ -65,4 +65,4 @@
 
 ---
 
-**[⬅️ Atrás](03-envio-informacion-intervalos.md) | [Volver al Índice ↩️](README.md)**
+**[⬅️ Atrás](04-envio-informacion-intervalos.md) | [Volver al Índice ↩️](README.md)**
