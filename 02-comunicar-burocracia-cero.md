@@ -1,4 +1,4 @@
-# 2. Comunicar a Burocracia Cero para Obtener Acceso
+# 2. Coordinación con Burocracia Cero para habilitar acceso en X-Road
 
 Antes de poder enviar solicitudes al Dashboard Monitor, es necesario que la institución solicite el identificador de servicio (**service_id**) y la autorización de acceso a los subsistemas requeridos a través de X-ROAD.
 
