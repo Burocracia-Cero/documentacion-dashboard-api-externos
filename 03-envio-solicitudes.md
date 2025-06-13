@@ -5,7 +5,7 @@
 El sistema debe enviar la información correspondiente a **todas las solicitudes que hayan cambiado de estado durante el día actual**.  
 Esto incluye:
 
-- Todas las solicitudes cuya información o estado haya sido modificada en curso.
+- Todas las solicitudes cuyo estado haya sido modificada en curso.
 - El historial completo de cambios de estado (logs) que hayan ocurrido durante el día para esas solicitudes.
 
 ### Opciones de envío:
