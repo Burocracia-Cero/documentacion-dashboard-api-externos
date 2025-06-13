@@ -35,8 +35,8 @@ POST /services-data/requests
 - `service_id`: ID del servicio asignado por Burocracia Cero.
 - `request_id`: ID único de la solicitud generado por la institución.
 - `opening_date`: Fecha y hora en que se inició la solicitud (formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)).
-- `status_id`: Estado actual de la solicitud (ver tabla de estados).
-- `last_modified_date`: Fecha y hora de la última actualización de la solicitud (formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)).
+- `status_id`: Estado de la solicitud (ver tabla de estados).
+- `last_modified_date`: Fecha y hora del cambio de estado de la solicitud (formato [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601)).
 
 **Respuesta esperada:**
 
