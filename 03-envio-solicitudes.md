@@ -2,7 +2,20 @@
 
 ## 3.1 Endpoints Necesarios
 
-El sistema debe enviar la data necesaria de todas las solicitudes que han cambiado de estado en el día actual utilizando los siguientes endpoints:
+El sistema debe enviar la información correspondiente a **todas las solicitudes que hayan cambiado de estado durante el día actual**.  
+Esto incluye:
+
+- Todas las solicitudes cuya información o estado haya sido modificada en curso.
+- El historial completo de cambios de estado (logs) que hayan ocurrido durante el día para esas solicitudes.
+
+**Opciones de envío:**  
+Se sugiere realizar peticiones separadas por cada servicio o trámite, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos. Aunque
+
+1. **Enviar peticiones separadas por servicio o trámite**, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos.
+2. **Enviar toda la información consolidada en una única petición**, agrupando todas las solicitudes y sus respectivos logs del día.
+
+La institución puede elegir libremente la opción que mejor se adapte a su arquitectura o flujo de integración.
+
 
 ### Enviar Solicitudes
 
