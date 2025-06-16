@@ -19,23 +19,4 @@ Para la instalación y configuración de X-ROAD, sigue las instrucciones detalla
 
 ---
 
-## Cómo buscar el servicio en X-ROAD:
-
-Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro del catálogo de servicios:
-
-
-1. **Buscar la institución:**  
-   Localiza la institución **CNC** en el listado de miembros de X-ROAD.
-
-2. **Seleccionar el subsistema:**  
-   Dentro de la institución CNC, busca y selecciona el subsistema **MONITOREO**.
-
-3. **Utilizar el servicio:**  
-   Dentro del subsistema MONITOREO, selecciona el servicio **INTEGRACION** para realizar la integración correspondiente.
-
-> **Referencia del servicio:**  
-> `CNC:MONITOREO:INTEGRACION`
-
----
-
 **[⬅️ Atrás](README.md) | [Siguiente ➡️](02-comunicar-burocracia-cero.md)**
