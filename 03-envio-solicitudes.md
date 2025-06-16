@@ -123,8 +123,8 @@ Cada petición contiene **solo las solicitudes de un servicio específico** (en 
       "service_id": "123",
       "request_id": "REQ-002",
       "opening_date": "2025-06-12T09:30:00Z",
-      "status_id": 3,
-      "last_modified_date": "2025-06-13T11:45:00Z"
+      "status_id": 1,
+      "last_modified_date": "2025-06-12T09:30:00Z"
     }
   ]
 }
@@ -141,22 +141,22 @@ Una sola petición contiene solicitudes de distintos servicios:
       "service_id": "123",
       "request_id": "REQ-001",
       "opening_date": "2025-06-13T08:00:00Z",
-      "status_id": 2,
-      "last_modified_date": "2025-06-13T10:15:00Z"
+      "status_id": 1,
+      "last_modified_date": "2025-06-13T08:00:00Z"
     },
     {
       "service_id": "456",
       "request_id": "REQ-003",
       "opening_date": "2025-06-10T14:20:00Z",
-      "status_id": 4,
-      "last_modified_date": "2025-06-13T12:05:00Z"
+      "status_id": 1,
+      "last_modified_date": "2025-06-10T14:20:00Z"
     },
     {
       "service_id": "789",
       "request_id": "REQ-004",
       "opening_date": "2025-06-11T16:45:00Z",
       "status_id": 1,
-      "last_modified_date": "2025-06-13T13:30:00Z"
+      "last_modified_date": "2025-06-11T16:45:00Z"
     }
   ]
 }
