@@ -4,6 +4,8 @@ Antes de poder enviar solicitudes al tablero de monitoreo, es necesario que la i
 
 ## Pasos para solicitar acceso
 
+> **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
+
 1. **Enviar un correo a:** monitoreo@burocraciacero.gob.do
 2. **Indicar en el correo:**
    - Qué subsistema(s) de X-ROAD necesitan acceso al endpoint.

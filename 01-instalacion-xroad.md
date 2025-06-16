@@ -23,7 +23,6 @@ Para la instalación y configuración de X-ROAD, sigue las instrucciones detalla
 
 Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro del catálogo de servicios:
 
-> **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
 
 1. **Buscar la institución:**  
    Localiza la institución **CNC** en el listado de miembros de X-ROAD.
