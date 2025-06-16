@@ -25,7 +25,7 @@ Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro
    Dentro de la institución CNC, busca y selecciona el subsistema **MONITOREO**.
 
 3. **Utilizar el servicio:**  
-   Dentro del subsistema MONITOREO, selecciona el servicio **INTEGRACION** para realizar la integración correspondiente.
+   Dentro del subsistema MONITOREO, selecciona el servicio **INTEGRACION-DEV** para realizar la integración correspondiente.
 
 > **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
 > 
