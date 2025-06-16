@@ -17,7 +17,6 @@ Antes de poder enviar solicitudes al tablero de monitoreo, es necesario que la i
 ## Cómo buscar el servicio en X-ROAD:
 
 Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro del catálogo de servicios:
-> **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
 
 1. **Buscar la institución:**  
    Localiza la institución **CNC** en el listado de miembros de X-ROAD.
@@ -28,6 +27,7 @@ Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro
 3. **Utilizar el servicio:**  
    Dentro del subsistema MONITOREO, selecciona el servicio **INTEGRACION** para realizar la integración correspondiente.
 
+> **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
 > **Referencia del servicio:**  
 > `CNC:MONITOREO:INTEGRACION`
 
