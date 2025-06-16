@@ -1,4 +1,4 @@
-# Documentación Dashboard Monitor - APIs Externos
+# Documentación Tablero de Monitoreo - APIs Externos
 
 **Versión:** 1.0.0
 
