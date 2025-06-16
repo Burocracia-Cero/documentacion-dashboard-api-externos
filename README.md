@@ -2,9 +2,9 @@
 
 **Versión:** 1.0.0
 
-## ¿Qué es el Dashboard Monitor?
+## ¿Qué es el Tablero de Monitoreo?
 
-El Dashboard Monitor es una herramienta centralizada de monitoreo que permite a las instituciones públicas reportar y visualizar el estado de los servicios ciudadanos. Esta plataforma facilita la transparencia y seguimiento de las solicitudes de servicios, mejorando la gestión y la experiencia del ciudadano.
+El tablero de monitoreo es una herramienta centralizada de monitoreo que permite a las instituciones públicas reportar y visualizar el estado de los servicios ciudadanos. Esta plataforma facilita la transparencia y seguimiento de las solicitudes de servicios, mejorando la gestión y la experiencia del ciudadano.
 
 ## Objetivo de esta documentación
 
