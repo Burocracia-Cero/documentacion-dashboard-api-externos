@@ -29,8 +29,10 @@ Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro
 
 > **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
 > 
-> **Referencia del servicio:**  
-> `CNC:MONITOREO:INTEGRACION-DEV`
+> **Referencia del servicio:**
+>
+> - **Desarrollo:** `CNC:MONITOREO:INTEGRACION:DEV`
+> - **Producción:** `CNC:MONITOREO:INTEGRACION`
 
 ---
 
