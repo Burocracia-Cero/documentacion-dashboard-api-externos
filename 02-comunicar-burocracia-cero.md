@@ -31,7 +31,7 @@ Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro
 > 
 > **Referencia del servicio:**
 >
-> - **Desarrollo:** `CNC:MONITOREO:INTEGRACION:DEV`
+> - **Desarrollo:** `CNC:MONITOREO:INTEGRACION-DEV`
 > - **Producción:** `CNC:MONITOREO:INTEGRACION`
 
 ---
