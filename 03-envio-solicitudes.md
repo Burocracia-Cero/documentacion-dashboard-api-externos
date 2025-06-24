@@ -59,30 +59,6 @@ POST /services-data/requests
 
 A continuación se presenta la lista completa de estados disponibles en el sistema:
 
-| id  | name                               |
-|-----|------------------------------------|
-| 1   | Generado                           |
-| 2   | En revisión                        |
-| 3   | Aprobado                           |
-| 4   | En aprobación                      |
-| 5   | En espera de pago                  |
-| 6   | Devuelto                           |
-| 7   | Completado                         |
-| 8   | Rechazado                          |
-| 9   | Recibido                           |
-| 10  | Cancelado                          |
-| 11  | Temporal                           |
-| 12  | Atraso por el cliente              |
-| 13  | Disponible Para Entrega            |
-| 14  | Entregado                          |
-| 15  | En espera de acción requerida      |
-| 16  | Pagado/No Actualizado              |
-| 17  | Queja/Reclamación Abierta          |
-| 18  | Queja/Reclamación en proceso       |
-| 19  | Queja/Reclamación Cerrada          |
-| 20  | Queja/Reclamación Descartada       |
-| 21  | En proceso                         |
-
 ### Descripción y significado de cada estado
 
 | ID  | Nombre                               | Descripción                        | Categoría   |
