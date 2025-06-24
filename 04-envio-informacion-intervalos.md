@@ -6,22 +6,41 @@ El sistema debe enviar información cada **24 horas** para mantener sincronizado
 
 ## Ejemplo - Configuración de Intervalos
 
+
 ```python
 # Configurar envío cada hora usando schedule
 import schedule
 import time
 from datetime import datetime, timedelta
 import requests
+import logging
 
-def send_hourly_data():
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+def send_hourly_data(max_retries=3):
     current_hour = datetime.now()
     previous_hour = current_hour - timedelta(hours=1)
     
     # Obtener datos del intervalo de la última hora
     interval_data = get_data_in_interval(previous_hour, current_hour)
     
-    # Enviar datos
-    send_data_to_endpoint(interval_data)
+    # Enviar datos con reintentos y backoff exponencial
+    retry_count = 0
+    while retry_count < max_retries:
+        try:
+            send_data_to_endpoint(interval_data)
+            logger.info("✅ Datos enviados correctamente")
+            break
+        except Exception as e:
+            retry_count += 1
+            wait_time = 2 ** retry_count  # 2, 4, 8, ... segundos
+            logger.error(f"❌ Intento {retry_count}/{max_retries} fallido: {str(e)}")
+            if retry_count < max_retries:
+                logger.info(f"Esperando {wait_time} segundos antes del siguiente intento...")
+                time.sleep(wait_time)
+            else:
+                logger.error(f"❌ Se abandonó después de {max_retries} intentos fallidos")
 
 # Programar la tarea para ejecutar cada 24 horas
 schedule.every(24).hour.do(send_hourly_data)
