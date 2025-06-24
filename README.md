@@ -45,7 +45,7 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 ---
 
-**Versión:** 1.0.3
+**Versión:** 1.0.4
 
 **Autores:** Equipo de Burocracia Cero
 
