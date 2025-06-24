@@ -1,7 +1,5 @@
 # Documentación Tablero de Monitoreo - APIs Externos
 
-**Versión:** 1.0.0
-
 ## ¿Qué es el Tablero de Monitoreo?
 
 El tablero de monitoreo es una herramienta centralizada de monitoreo que permite a las instituciones públicas reportar y visualizar el estado de los servicios ciudadanos. Esta plataforma facilita la transparencia y seguimiento de las solicitudes de servicios, mejorando la gestión y la experiencia del ciudadano.
@@ -47,6 +45,8 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 ---
 
+**Versión:** 1.0.3
+
 **Autores:** Equipo de Burocracia Cero
 
-**Última actualización:** 13/06/2025
+**Última actualización:** 24/06/2025

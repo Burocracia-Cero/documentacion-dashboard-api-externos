@@ -83,6 +83,32 @@ A continuación se presenta la lista completa de estados disponibles en el siste
 | 20  | Queja/Reclamación Descartada       |
 | 21  | En proceso                         |
 
+### Descripción y significado de cada estado
+
+| ID  | Nombre                               | Descripción                        | Categoría   |
+|-----|--------------------------------------|------------------------------------------|-----------------|
+| 1   | Generado                             | Solicitud creada en el sistema           | En Proceso      |
+| 2   | En revisión                          | En proceso de revisión                   | En Proceso      |
+| 3   | Aprobado                             | Solicitud aprobada                       | En Proceso      |
+| 4   | En aprobación                        | En proceso de aprobación                 | En Proceso      |
+| 5   | En espera de pago                    | Pendiente de pago                        | En Proceso      |
+| 6   | Devuelto                             | Devuelta para corrección o información   | En Proceso      |
+| 7   | Completado                           | Proceso finalizado correctamente         | Completado      |
+| 8   | Rechazado                            | Solicitud rechazada                      | Cancelado       |
+| 9   | Recibido                             | Documentos o datos recibidos             | En Proceso      |
+| 10  | Cancelado                            | Solicitud cancelada                      | Cancelado       |
+| 11  | Temporal                             | Estado temporal, pendiente de acción     | En Proceso      |
+| 12  | Atraso por el cliente                | Retraso causado por el solicitante       | En Proceso      |
+| 13  | Disponible Para Entrega              | Listo para ser entregado                 | En Proceso      |
+| 14  | Entregado                            | Entregado al solicitante                 | Completado      |
+| 15  | En espera de acción requerida        | Esperando acción del solicitante         | En Proceso      |
+| 16  | Pagado/No Actualizado                | Pagado pero falta actualización          | En Proceso      |
+| 17  | Queja/Reclamación Abierta            | Queja o reclamo abierto                  | En Proceso      |
+| 18  | Queja/Reclamación en proceso         | Queja o reclamo en proceso               | En Proceso      |
+| 19  | Queja/Reclamación Cerrada            | Queja o reclamo resuelto/cerrado         | Completado      |
+| 20  | Queja/Reclamación Descartada         | Queja o reclamo descartado               | Cancelado       |
+| 21  | En proceso                           | Solicitud en proceso general             | En Proceso      |
+
 ---
 
 ## 3.3 Opciones de envío:
