@@ -1,38 +1,32 @@
 # 2. Solicitar acceso en X-Road
 
-Antes de poder enviar solicitudes al tablero de monitoreo, es necesario que la institución solicite el identificador de servicio (**service_id**) y la autorización de acceso a los subsistemas requeridos a través de X-ROAD.
+> ⚠️ **Importante:** Antes de consumir el servicio, asegúrese de que:
+> - Ha seguido todos los pasos de la documentación oficial de [X-ROAD (OGTIC)](https://github.com/ogticrd/xroad-members).
+> - Su subsistema y servicio ya fue creado, activado y verificado por el servidor central ([X-ROAD (OGTIC)](https://github.com/ogticrd/xroad-members)).
 
-## Pasos para solicitar acceso
+## 2.1 Pasos para solicitar acceso
 
 
 1. **Enviar un correo a:** monitoreo@burocraciacero.gob.do
 2. **Indicar en el correo:**
-   - Qué subsistema(s) de X-ROAD necesitan acceso al endpoint.
+   - Qué subsistema(s) y servico(s) de X-ROAD necesitan acceso al endpoint.
 3. **Esperar confirmación:** El equipo de Burocracia Cero le proporcionará el `service_id` y confirmará el acceso a los subsistemas solicitados.
 
-> **Importante:** Sin el `service_id` y la autorización de subsistemas, no podrá reportar solicitudes mediante la API.
+> **⚠️ Importante:** Sin el `service_id` y la autorización de subsistemas, no podrá reportar solicitudes mediante la API.
 
 ---
 
-## Cómo buscar el servicio en X-ROAD:
 
-Para consumir el servicio de integración desde X-ROAD, sigue estos pasos dentro del catálogo de servicios:
+## 2.2 Cómo buscar y consumir el servicio en X-ROAD
 
-1. **Buscar la institución:**  
-   Localiza la institución **CNC** en el listado de miembros de X-ROAD.
-
-2. **Seleccionar el subsistema:**  
-   Dentro de la institución CNC, busca y selecciona el subsistema **MONITOREO**.
-
-3. **Utilizar el servicio:**  
-   Dentro del subsistema MONITOREO, selecciona el servicio **INTEGRACION-DEV** para realizar la integración correspondiente.
+Para consumir el servicio de integración en X-ROAD, siga la guía oficial proporcionada por la OGTIC:
 
 > **Consulta la guía oficial para consumir servicios en X-ROAD:** [08_consumir_servicio.md](https://github.com/ogticrd/xroad-members/blob/master/08_consumir_servicio.md)
-> 
-> **Referencia del servicio:**
->
-> - **Desarrollo:** `CNC:MONITOREO:INTEGRACION-DEV`
-> - **Producción:** `CNC:MONITOREO:INTEGRACION`
+
+Utilice los siguientes identificadores de servicio según el entorno:
+
+- **Desarrollo:** `CNC:MONITOREO:INTEGRACION-DEV`
+- **Producción:** `CNC:MONITOREO:INTEGRACION`
 
 ---
 

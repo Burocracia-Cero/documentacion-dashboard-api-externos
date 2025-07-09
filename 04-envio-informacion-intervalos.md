@@ -1,6 +1,14 @@
 # 4. Envío de Información por Intervalos
 
-> **Recomendación:** Puede programar el envío de datos en el horario que mejor se adapte a las necesidades y operaciones de su institución. Sin embargo, para evitar posibles afectaciones al rendimiento de los sistemas y la red, sugerimos realizar estos envíos durante periodos de baja demanda, como en la noche o fuera del horario laboral. Esto ayuda a garantizar una transferencia de datos más eficiente y reduce el riesgo de saturación o lentitud en los servicios.
+> ⚡ **Procesos de Envío de Información:**
+>
+> 1. **Carga histórica:** Este proceso se realiza una sola vez para enviar todas las solicitudes históricas desde el 01/01/2020. Puede hacerse en múltiples envíos (por lotes o chunks, Ej. enviar la información por mes) hasta completar toda la carga inicial.
+> 2. **Envío diario:** A partir de la carga histórica, cada día se debe enviar únicamente la información de las solicitudes que hayan cambiado de estado en el día actual. Este proceso es recurrente y se ejecuta una vez al día, todos los días.
+>
+> Ambos procesos son obligatorios para mantener la información sincronizada y actualizada en el tablero de monitoreo.
+
+> 💡 **Recomendación:** Para evitar lentitud o saturación, programe el envío de datos en horarios de baja demanda (por ejemplo, durante la noche o fuera del horario laboral). Así asegura una transferencia eficiente y sin afectar el rendimiento de sus sistemas.
+
 
 El sistema debe enviar información cada **24 horas** para mantener sincronizados los datos entre sistemas.
 
