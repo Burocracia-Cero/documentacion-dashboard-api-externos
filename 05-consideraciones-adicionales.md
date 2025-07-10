@@ -17,4 +17,4 @@
 
 ---
 
-**[⬅️ Atrás](04-envio-informacion-intervalos.md) | [Volver al Índice ↩️](README.md)**
+**[⬅️ Atrás](04-envio-informacion.md) | [Volver al Índice ↩️](README.md)**
