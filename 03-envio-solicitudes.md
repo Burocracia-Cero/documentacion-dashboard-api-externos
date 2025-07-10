@@ -11,6 +11,7 @@ Esto incluye:
 ---
 
 ## 3.2 Endpoints Necesarios
+
 ### Enviar Solicitudes
 
 ```http
@@ -88,11 +89,12 @@ A continuación se presenta la lista completa de estados disponibles en el siste
 ---
 
 ## 3.3 Opciones de envío:
+
 1. **Enviar peticiones separadas por servicio o trámite**, donde cada petición incluya todas las solicitudes afectadas de ese servicio, junto con su historial de cambios del día. Esto puede facilitar el procesamiento y optimizar la transferencia de datos.
+
 2. **Enviar toda la información consolidada en una única petición**, agrupando todas las solicitudes y sus respectivos logs del día.
 
 La institución puede elegir libremente la opción que mejor se adapte a su arquitectura o flujo de integración.
-
 
 ### Ejemplos de envío de información
 
@@ -131,10 +133,10 @@ Cada petición contiene **solo las solicitudes de un servicio específico** (en 
   ]
 }
 ```
+
 #### ✅ Opción 2: Petición consolidada con múltiples servicios
 
 Una sola petición contiene solicitudes de distintos servicios:
-
 
 ```json
 {
@@ -166,4 +168,4 @@ Una sola petición contiene solicitudes de distintos servicios:
 
 ---
 
-**[⬅️ Atrás](02-comunicar-burocracia-cero.md) | [Siguiente ➡️](04-envio-informacion-intervalos.md)**
+**[⬅️ Atrás](02-comunicar-burocracia-cero.md) | [Siguiente ➡️](04-envio-informacion.md)**

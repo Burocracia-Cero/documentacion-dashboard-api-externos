@@ -4,9 +4,7 @@
 
 ## 4.1 Carga histórica
 
-La carga histórica es el primer paso para integrar su información al tablero. Consiste en enviar todas las solicitudes históricas desde el **01/01/2020** (o desde la fecha más antigua que tenga disponible). Este proceso se realiza una sola vez y puede hacerse en varios envíos por lotes (por ejemplo, mes a mes) hasta completar toda la carga inicial.
-
-> 📅 **Importante:** Solo envíe solicitudes con fecha igual o posterior al **01/01/2020**. Si no tiene datos desde esa fecha, envíe las solicitudes más antiguas que tenga en su sistema.
+La carga histórica es el primer paso para integrar su información al tablero. Consiste en enviar todas las solicitudes históricas desde el **01/01/2020** (o desde la fecha más antigua que tenga disponible). Este proceso se ejecuta **una sola vez** para transferir toda la información acumulada. Para evitar sobrecargar el sistema, divida el envío en **lotes** o **"chunks"** de hasta **1000 solicitudes** cada uno, o agrupando la información por periodos mensuales.
 
 ### 4.1.1 Ejemplo - Configuración de Envío de Carga Histórica
 
@@ -72,7 +70,7 @@ if __name__ == "__main__":
 
 ## 4.2 Envío diario
 
-El envío diario consiste en reportar, una vez al día, únicamente la información de las solicitudes que hayan cambiado de estado en el día actual. Este proceso es recurrente y obligatorio para mantener la información sincronizada y actualizada en el tablero de monitoreo.
+El envío diario consiste en reportar, una **vez al día**, únicamente la información de las solicitudes que hayan cambiado de estado en el día actual. Este proceso es recurrente y obligatorio para mantener la información sincronizada y actualizada en el tablero de monitoreo.
 
 El sistema debe enviar información cada **24 horas** para mantener sincronizados los datos entre sistemas.
 

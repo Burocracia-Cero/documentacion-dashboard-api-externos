@@ -43,9 +43,17 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 - **Email:** monitoreo@burocraciacero.gob.do
 
+## Contribuciones y sugerencias
+
+> 💡 **Tu opinión es importante:**
+>
+> Si detectas errores, tienes observaciones o ideas para mejorar, ¡te invitamos a participar! Puedes abrir una [**Issue**](https://github.com/Burocracia-Cero/documentacion-dashboard-api-externos/issues/new) para reportar problemas o sugerencias, o enviar un [**Pull Request**](https://github.com/Burocracia-Cero/documentacion-dashboard-api-externos/compare) con tus aportes.
+>
+> Todas las contribuciones son bienvenidas y ayudan a que la documentación sea más útil y accesible para todos.
+
 ---
 
-**Versión:** 1.1.0
+**Versión:** 1.2.0
 
 **Autores:** Equipo de Burocracia Cero
 
