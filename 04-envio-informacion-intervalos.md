@@ -1,22 +1,84 @@
-# 4. Envío de Información por Intervalos
-
-> ⚡ **Procesos de Envío de Información:**
->
-> 1. **Carga histórica:** Este proceso se realiza una sola vez para enviar todas las solicitudes históricas desde el 01/01/2020. Puede hacerse en múltiples envíos (por lotes o chunks, Ej. enviar la información por mes) hasta completar toda la carga inicial.
-> 2. **Envío diario:** A partir de la carga histórica, cada día se debe enviar únicamente la información de las solicitudes que hayan cambiado de estado en el día actual. Este proceso es recurrente y se ejecuta una vez al día, todos los días.
->
-> Ambos procesos son obligatorios para mantener la información sincronizada y actualizada en el tablero de monitoreo.
+# 4. Procesos de Envío de Información
 
 > 💡 **Recomendación:** Para evitar lentitud o saturación, programe el envío de datos en horarios de baja demanda (por ejemplo, durante la noche o fuera del horario laboral). Así asegura una transferencia eficiente y sin afectar el rendimiento de sus sistemas.
 
+## 4.1 Carga histórica
+
+La carga histórica es el primer paso para integrar su información al tablero. Consiste en enviar todas las solicitudes históricas desde el **01/01/2020** (o desde la fecha más antigua que tenga disponible). Este proceso se realiza una sola vez y puede hacerse en varios envíos por lotes (por ejemplo, mes a mes) hasta completar toda la carga inicial.
+
+> 📅 **Importante:** Solo envíe solicitudes con fecha igual o posterior al **01/01/2020**. Si no tiene datos desde esa fecha, envíe las solicitudes más antiguas que tenga en su sistema.
+
+### 4.1.1 Ejemplo - Configuración de Envío de Carga Histórica
+
+```python
+import schedule
+import time
+import logging
+from datetime import datetime, timedelta
+import requests
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Función para enviar un lote de solicitudes históricas con reintentos y backoff exponencial
+def send_historical_batch(batch, max_retries=3):
+    retry_count = 0
+    while retry_count < max_retries:
+        try:
+            # Aquí se debe implementar la lógica para enviar el lote al endpoint real
+            send_data_to_endpoint(batch)  # Reemplazar con la función real de envío
+            logger.info("✅ Lote enviado correctamente")
+            break
+        except Exception as e:
+            retry_count += 1
+            wait_time = 2 ** retry_count  # Backoff exponencial: 2, 4, 8, ... segundos
+            logger.error(f"❌ Intento {retry_count}/{max_retries} fallido: {str(e)}")
+            if retry_count < max_retries:
+                logger.info(f"Esperando {wait_time} segundos antes del siguiente intento...")
+                time.sleep(wait_time)
+    else:
+        logger.error(f"❌ Se abandonó el lote después de {max_retries} intentos fallidos")
+
+# Función para obtener el primer día del siguiente mes
+def next_month(date):
+    if date.month == 12:
+        return date.replace(year=date.year + 1, month=1, day=1)
+    else:
+        return date.replace(month=date.month + 1, day=1)
+
+# Función principal para obtener y enviar todos los lotes históricos mes por mes
+# Versión simplificada
+
+def send_all_historical_data():
+    start_date = datetime(2020, 1, 1)
+    end_date = datetime.now()
+    current = start_date
+    while current < end_date:
+        next_period = min(next_month(current), end_date)
+        batch = get_historical_batch(current, next_period)  # Debe implementar esta función
+        send_historical_batch(batch)
+        current = next_period
+
+schedule.every().day.at("02:00").do(send_all_historical_data)
+
+def run_scheduler():
+    while True:
+        schedule.run_pending()
+        time.sleep(60)  # Verificar cada minuto si hay tareas pendientes
+
+if __name__ == "__main__":
+    run_scheduler()
+```
+
+## 4.2 Envío diario
+
+El envío diario consiste en reportar, una vez al día, únicamente la información de las solicitudes que hayan cambiado de estado en el día actual. Este proceso es recurrente y obligatorio para mantener la información sincronizada y actualizada en el tablero de monitoreo.
 
 El sistema debe enviar información cada **24 horas** para mantener sincronizados los datos entre sistemas.
 
-## Ejemplo - Configuración de Intervalos
-
+### 4.2.1 Ejemplo - Configuración de Envío diario
 
 ```python
-# Configurar envío cada hora usando schedule
 import schedule
 import time
 from datetime import datetime, timedelta
