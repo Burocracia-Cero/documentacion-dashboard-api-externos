@@ -57,4 +57,4 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 **Autores:** Equipo de Burocracia Cero
 
-**Última actualización:** 10/07/2025
+**Última actualización:** 16/07/2025
