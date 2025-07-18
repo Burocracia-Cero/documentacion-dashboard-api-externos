@@ -24,7 +24,7 @@ Esta documentación está organizada de forma secuencial, guiándole paso a paso
 | [1. Instalación y Configuración de X-ROAD](01-instalacion-xroad.md) | Guía para instalar y configurar X-ROAD como plataforma de intercambio seguro de datos |
 | [2. Comunicar a Burocracia Cero para Obtener Acceso](02-comunicar-burocracia-cero.md) | Solicitud de service_id y autorización de subsistemas para poder utilizar la API |
 | [3. Envío de Solicitudes con Cambios de Estado](03-envio-solicitudes.md) | Detalle de endpoints, esquemas de datos y ejemplos prácticos para reportar solicitudes |
-| [4. Envío de Información por Intervalos](04-envio-informacion-intervalos.md) | Estrategias para implementar envíos periódicos de información cada hora |
+| [4. Envío de Información](04-envio-informacion.md) | Estrategias para implementar envíos periódicos de información cada hora |
 | [5. Consideraciones Adicionales](05-consideraciones-adicionales.md) | Mejores prácticas para seguridad, manejo de errores, monitoreo y escalabilidad |
 
 > **Navegación:** Cada documento incluye enlaces en su parte inferior para facilitar el movimiento entre las diferentes secciones de la documentación.
@@ -53,8 +53,8 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 ---
 
-**Versión:** 1.2.0
+**Versión:** 1.2.1
 
 **Autores:** Equipo de Burocracia Cero
 
-**Última actualización:** 16/07/2025
+**Última actualización:** 18/07/2025
