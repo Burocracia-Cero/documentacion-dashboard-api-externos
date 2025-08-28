@@ -14,6 +14,16 @@ Esto incluye:
 
 ### Enviar Solicitudes
 
+> ⚠️ **Aviso de deprecación:**
+>
+> El endpoint `/services-data/requests` está **deprecado**. Por favor, utilice el nuevo endpoint recomendado:
+>
+> ```http
+> POST /api/load
+> ```
+>
+> para enviar solicitudes y sus cambios de estado. Esto garantiza compatibilidad y soporte a futuro.
+
 ```http
 POST /services-data/requests
 ```
