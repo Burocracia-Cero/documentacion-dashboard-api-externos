@@ -6,7 +6,15 @@
 
 La carga histórica es el primer paso para integrar su información al tablero. Consiste en enviar todas las solicitudes históricas desde el **01/01/2020** (o desde la fecha más antigua que tenga disponible). Este proceso se ejecuta **una sola vez** para transferir toda la información acumulada. Para evitar sobrecargar el sistema, divida el envío en **lotes** o **"chunks"** de hasta **1000 solicitudes** cada uno, o agrupando la información por periodos mensuales.
 
-### 4.1.1 Ejemplo - Configuración de Envío de Carga Histórica
+### 4.1.1 Dependencias necesarias
+
+Para ejecutar los ejemplos de código en esta documentación, debe instalar las siguientes dependencias:
+
+```bash
+pip install schedule requests
+```
+
+### 4.1.2 Ejemplo - Configuración de Envío de Carga Histórica
 
 ```python
 import schedule
@@ -75,6 +83,8 @@ El envío diario consiste en reportar, una **vez al día**, únicamente la infor
 El sistema debe enviar información cada **24 horas** para mantener sincronizados los datos entre sistemas.
 
 ### 4.2.1 Ejemplo - Configuración de Envío diario
+
+> ⚠️ **Importante:** Asegúrese de haber instalado las dependencias mencionadas anteriormente (`pip install schedule requests`).
 
 ```python
 import schedule

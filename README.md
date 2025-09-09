@@ -53,8 +53,8 @@ Si encuentra problemas durante la implementación o tiene preguntas adicionales,
 
 ---
 
-**Versión:** 1.3.0
+**Versión:** 1.3.1
 
 **Autores:** Equipo de Burocracia Cero
 
-**Última actualización:** 28/08/2025
+**Última actualización:** 09/09/2025
